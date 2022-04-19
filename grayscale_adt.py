@@ -115,10 +115,3 @@ class GrayscaleImage:
 
     def lzw_compression_ratio(self) -> float:
         return (self.width() * self.height()) / (len(self.lzw_compression()) - 8)
-
-
-image2 = GrayscaleImage.from_file("image.jpg")
-image2.save('test2.png')
-print(image2.lzw_compression_ratio())
-image3 = GrayscaleImage.lzw_decompression(image2.lzw_compression())
-image3.save('test.png')
